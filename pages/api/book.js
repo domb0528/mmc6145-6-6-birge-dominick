@@ -13,7 +13,7 @@ export default withIronSessionApiRoute(
     }
 
       // User info can be accessed with req.session
-      // No user info on the session means the user is not logged in
+    // No user info on the session means the user is not logged in
 
     switch (req.method) {
       // TODO: On a POST request, add a book using db.book.add with request body (must use JSON.parse)
@@ -29,7 +29,7 @@ export default withIronSessionApiRoute(
             return res.status(401).json({error: "User not found"})
           }
 
-          return res.status(200).end()
+          return res.status(200).json(addBook)
         }
 
         catch (error) {
